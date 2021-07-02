@@ -1,0 +1,45 @@
+// ------------------------------------------------------------------------
+//       Use of % is better than pixels for layout related lengths
+// ------------------------------------------------------------------------
+
+
+.header{
+    height: 95vh; /* 95% of viewport height(vh) */
+    background-image: linear-gradient(to right bottom,
+      rgba($color-primary, 0.8),
+      rgba($color-secondary, 0.8)),
+      url(../imgs/lap.jpg);
+    background-size: cover;   /* try to fit the element into the viewport */
+    background-position: center;   /* specified part of the image will remain unchanged ie. center*/
+    -webkit-clip-path: polygon(0 0, 100vw 0, 100vw 80vh, 0 100%);
+    clip-path: polygon(0 0, 100vw 0, 100vw 80vh, 0 100%);
+    position: relative;
+  
+    @include respond(phone) {
+      clip-path: polygon(0 0, 100vw 0, 100vw 85vh, 0 100%);
+      -webkit-clip-path: polygon(0 0, 100vw 0, 100vw 85vh, 0 100%);
+    }
+  }
+  
+  .logo-box{
+    position: absolute;
+    top: 0;
+    left: 4rem;
+  }
+  
+  .logo{
+    color: #19547b;
+    height: 6rem;
+  }
+  
+  .text-box{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text-box a{
+    letter-spacing: .2rem;
+  }
